@@ -2,7 +2,7 @@ import sqlite3
 
 
 def create_db():
-    conn = sqlite3.connect('coffee.sqlite')
+    conn = sqlite3.connect('data/coffee.sqlite')
     cursor = conn.cursor()
 
     cursor.execute('''

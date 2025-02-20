@@ -3,14 +3,15 @@ from create_db import create_db
 import sqlite3
 from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QLineEdit, QComboBox, \
     QDoubleSpinBox, QSpinBox, QPushButton, QDialog, QVBoxLayout, QMessageBox
-from PyQt6 import uic
+from UI.addEditCoffeeForm import Ui_AddEditCoffeeForm
+from UI.main import Ui_CoffeeApp
 
 
-class CoffeeApp(QMainWindow):
+class CoffeeApp(QMainWindow, Ui_CoffeeApp):
     def __init__(self):
         super().__init__()
-        uic.loadUi("main.ui", self)
-        self.connection = sqlite3.connect("coffee.sqlite")
+        self.setupUi(self)
+        self.connection = sqlite3.connect("data/coffee.sqlite")
         cursor = self.connection.cursor()
         cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='coffee'")
         if not cursor.fetchone():
@@ -75,10 +76,10 @@ class CoffeeApp(QMainWindow):
         error_message.exec()
 
 
-class AddEditCoffeeForm(QDialog):
+class AddEditCoffeeForm(QDialog, Ui_AddEditCoffeeForm):
     def __init__(self, coffee_data=None, connection=None):
         super().__init__()
-        uic.loadUi("addEditCoffeeForm.ui", self)
+        self.setupUi(self)
         self.connection = connection
         self.coffee_data = coffee_data
         layout = QVBoxLayout(self)
