@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddEditCoffeeForm</class>
+ <widget class="QDialog" name="AddEditCoffeeForm">
+  <layout class="QVBoxLayout">
+   <item>
+    <widget class="QLineEdit" name="coffee_name_edit">
+     <property name="placeholderText">
+      <string>Введите название кофе</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="roast_degree_combo">
+     <property name="placeholderText">
+      <string>Выберите степень обжарки</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="ground_or_whole_combo">
+     <property name="placeholderText">
+      <string>Выберите молотый/в зернах</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="taste_desc_edit">
+     <property name="placeholderText">
+      <string>Введите описание вкуса</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDoubleSpinBox" name="price_spin"/>
+   </item>
+   <item>
+    <widget class="QSpinBox" name="volume_spin"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="save_button">
+     <property name="text">
+      <string>Сохранить</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>
